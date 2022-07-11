@@ -9,4 +9,11 @@ import "../styles/index.css";
 import Home from "./component/home.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+
+
+let counter = 0
+ReactDOM.render(<Home counter={counter}/>, document.querySelector("#app"));
+
+
+
+

@@ -1,26 +1,30 @@
-import React from "react";
+
+import React, { useState, useEffect } from 'react';
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import Clock from "./SecondCounter.jsx";
+
+import ReverseClock from "./ReverseClock.jsx";
+
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+const Home = (props) => {
+	if (props.countdown) {
+		return (
+			<div className="text-center bg-dark">
+				
+				<ReverseClock counter={props.counter}  />
+			</div>
+		);
+	} else {
+		return (
+			<div className="text-center bg-dark">
+				
+				<Clock counter={props.counter}  />
+			</div>
+		);
+	}
+	
 };
 
 export default Home;
